@@ -1,0 +1,14 @@
+{
+  "name": "winesnap",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node api/weekly-digest.js"
+  },
+  "dependencies": {
+    "dotenv": "^17.2.3",
+    "openai": "^4.58.1",
+    "resend": "^3.3.0"
+  }
+}
