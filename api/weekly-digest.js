@@ -22,7 +22,15 @@ export default async function handler(req, res) {
   console.log("Test email:", process.env.TEST_EMAIL);
   console.log("Reading data from sample.json...");
   try {
-    const data = JSON.parse(await fs.readFile("data/sample.json", "utf8"));
+    const data = {
+      period: "2025-11-03..2025-11-09",
+      sales: { web: 12450, pos: 9870, orders: 212, prev_orders: 228 },
+      club: { joins: 8, cancels: 5, active: 612, prev_active: 607 },
+      topSkus: [
+        { sku: "PN-2022", name: "Pinot Noir 2022", units: 56, revenue: 3920 },
+        { sku: "SB-2023", name: "Sauvignon Blanc 2023", units: 44, revenue: 1760 }
+      ]
+    };
     const { revenue, aov, ordersDelta } = calcMetrics(data);
 
     const prompt = `
