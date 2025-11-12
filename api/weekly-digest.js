@@ -22,7 +22,7 @@ export default async function handler(req, res) {
   console.log("Test email:", process.env.TEST_EMAIL);
   console.log("Reading data from sample.json...");
   try {
-    const data = JSON.parse(await fs.readFile("sample.json", "utf8"));
+    const data = JSON.parse(await fs.readFile("data/sample.json", "utf8"));
     const { revenue, aov, ordersDelta } = calcMetrics(data);
 
     const prompt = `
