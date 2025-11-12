@@ -1,5 +1,6 @@
 {
-    "crons": [
+  "routes": [{ "src": "/", "dest": "/index.html" }],
+  "crons": [
       { "path": "/api/weekly-digest", "schedule": "0 17 * * 1" }
     ]
   }
